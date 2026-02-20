@@ -7,7 +7,26 @@
  */
 
 
-function getValueOfInputItems(value) {
-    const valueOfItems = document.getElementById(value).value;
+function getValueOfInputItems(id) {
+    const valueOfItems = document.getElementById(id).value;
     return valueOfItems;
+}
+
+
+
+function getInnerTextOftItems(id) {
+    const innerTextOfItems = document.getElementById(id).innerText;
+    return Number(innerTextOfItems);
+}
+
+
+function showOnly(id){
+    const cashOut = document.getElementById('cashout');
+    const addMoney = document.getElementById('add-money');
+    
+    cashOut.classList.add('hidden');
+    addMoney.classList.add('hidden')
+
+    const selected = document.getElementById(id);
+    selected.classList.remove("hidden");
 }

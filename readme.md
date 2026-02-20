@@ -16,43 +16,6 @@ PAYOO is a smart Mobile Financial Services (MFS) interface that provides a seaml
 - **PIN Security System** - Every transaction requires PIN authentication for enhanced security
 - **User-Friendly Interface** - Responsive design built with DaisyUI for optimal experience across devices
 
-## UI 
-<table>
-    <tr>
-        <td>
-        <img src="./ui/Login page.png" >
-        </td>
-        <td >
-        <img src="./assets/Logo-full.png" width="100%" style="background:white;padding:10px;">
-        </td>
-    </tr>
-    <tr>
-        <td>
-        <img src="./ui/Cashout.png" >
-        </td>
-        <td >
-        <img src="./ui/Add Money.png" >
-        </td>
-    </tr>
-    <tr>
-        <td>
-        <img src="./ui/Transactions.png" >
-        </td>
-        <td >
-        <img src="./ui/Pay Bill.png" >
-        </td>
-    </tr>
-    <tr>
-        <td>
-        <img src="./ui/send money.png" >
-        </td>
-        <td >
-        <img src="./ui/Home Page.png">
-        </td>
-    </tr>
-    
-</table>
-
 ## How to use
 
 ### 1. Clone the Repository

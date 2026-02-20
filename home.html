@@ -1,11 +1,244 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
+    <!-- DaisyUI + Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+
+    <!-- Title -->
+    <title>Payoo Mobile Banking</title>
+
+    <style>
+        * {
+            font-family: "Outfit", sans-serif;
+        }
+    </style>
 </head>
-<body>
-    <h1>hi</h1>
+
+<body class="min-h-screen bg-base-200 flex flex-col ">
+    <section class="w-full max-w-4xl mx-auto px-6 py-8">
+
+        <nav class="flex  justify-between border-b border-b-[#777777] p-6">
+            <div class="flex gap-2 items-center">
+                <img class="w-[70px] h-[55px]" src="./assets/logo.png" alt="">
+                <div>
+                    <h2 class="text-[18px] font-extrabold">$<span id="balance">45000</span></h2>
+                    <p class="text-[#777777]">Available Balance</p>
+                </div>
+            </div>
+
+            <button id="logOut" class="btn btn-outline rounded-lg px-[28px] py-[20pxpx]">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                <span>Log Out</span>
+            </button>
+        </nav>
+
+
+    </section>
+
+
+    <section class="w-full max-w-4xl mx-auto space-y-5">
+        <div class="pyoo-text pt-[24px] space-y-3">
+            <h1 class="text-[24px] font-bold">Welcome to py<span class="text-[#7460FF]">oo</span></h1>
+            <p class="text-[#777777]">Enjoy easy and convenient financial services with us. Cashout charge is low and
+            </p>
+        </div>
+
+        <div class="buttons grid grid-cols-3 gap-3">
+
+            <button onclick="showOnly('add-money')" class="btn btn-outline flex-col h-full py-6">
+                <img src="assets/opt-1.png" alt="">
+                <p>Add Money</p>
+            </button>
+            <button onclick="showOnly('cashout')" class="btn btn-outline flex-col h-full py-6 ">
+                <img src="assets/opt-2.png" alt="">
+                <p>Cashout</p>
+            </button>
+            <button class="btn btn-outline flex-col h-full py-6">
+                <img src="assets/opt-3.png" alt="">
+                <p>Send Money</p>
+            </button>
+            <button class="btn btn-outline flex-col h-full py-6">
+                <img src="assets/opt-4.png" alt="">
+                <p>Get Bonus</p>
+            </button>
+            <button class="btn btn-outline flex-col h-full py-6">
+                <img src="assets/opt-5.png" alt="">
+                <p>Pay Bill</p>
+            </button>
+            <button class="btn btn-outline flex-col h-full py-4">
+                <img src="assets/opt-6.png" alt="">
+                <p>Transactions</p>
+            </button>
+
+        </div>
+    </section>
+
+    <!-- -----------------------------Latest Payment ----------------------------------------- -->
+     <section class="w-full max-w-4xl mx-auto space-y-5 pt-[20px]">
+        <div class="payment-text flex w-full gap-[40rem] rounded-3xl p-8 ">
+            <h2 class="text-[18px] font-bold">Latest Payment</h2>
+            <a class="text-[#777777] text-[1rem]" href="#">View All</a>
+        </div>
+
+       <div id="payment-cards" class="space-y-4 max-w-4xl mx-auto pb-9">
+    <div class="bg-white border border-gray-200 rounded-2xl flex justify-between items-center py-5 px-6 shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 hover:scale-105 cursor-pointer">
+        
+        <!-- Left: Icon + Text -->
+        <div class="flex gap-4 items-center">
+            <img class="w-12 h-12 object-contain" src="./assets/opt-1.png" alt="Electricity Bill">
+            <div>
+                <h2 class="text-lg font-semibold text-gray-900">Electricity Bill</h2>
+                <p class="text-gray-500 text-sm">Today 01:44 AM</p>
+            </div>
+        </div>
+
+        <!-- Right: Options Icon -->
+        <div class="text-gray-400 hover:text-gray-600 transition-colors duration-300">
+            <i class="fa-solid fa-ellipsis fa-lg"></i>
+        </div>
+    </div>
+
+    <!-- Example second card -->
+    <div class="bg-white border border-gray-200 rounded-2xl flex justify-between items-center py-5 px-6 shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 hover:scale-105 cursor-pointer">
+        <div class="flex gap-4 items-center">
+            <img class="w-12 h-12 object-contain" src="./assets/opt-2.png" alt="Water Bill">
+            <div>
+                <h2 class="text-lg font-semibold text-gray-900">Water Bill</h2>
+                <p class="text-gray-500 text-sm">Yesterday 08:15 PM</p>
+            </div>
+        </div>
+        <div class="text-gray-400 hover:text-gray-600 transition-colors duration-300">
+            <i class="fa-solid fa-ellipsis fa-lg"></i>
+        </div>
+    </div>
+
+<!-- 3rd card -->
+
+<div class="bg-white border border-gray-200 rounded-2xl flex justify-between items-center py-5 px-6 shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 hover:scale-105 cursor-pointer">
+        <div class="flex gap-4 items-center">
+            <img class="w-12 h-12 object-contain" src="./assets/opt-3.png" alt="Water Bill">
+            <div>
+                <h2 class="text-lg font-semibold text-gray-900">Mobile Recharge</h2>
+                <p class="text-gray-500 text-sm">Yesterday 10:20 PM</p>
+            </div>
+        </div>
+        <div class="text-gray-400 hover:text-gray-600 transition-colors duration-300">
+            <i class="fa-solid fa-ellipsis fa-lg"></i>
+        </div>
+    </div>
+
+    <!-- 4th card -->
+
+<div class="bg-white border border-gray-200 rounded-2xl flex justify-between items-center py-5 px-6 shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 hover:scale-105 cursor-pointer">
+        <div class="flex gap-4 items-center">
+            <img class="w-12 h-12 object-contain" src="./assets/opt-4.png" alt="Water Bill">
+            <div>
+                <h2 class="text-lg font-semibold text-gray-900">Gas Bill</h2>
+                <p class="text-gray-500 text-sm">Today 12:50 PM</p>
+            </div>
+        </div>
+        <div class="text-gray-400 hover:text-gray-600 transition-colors duration-300">
+            <i class="fa-solid fa-ellipsis fa-lg"></i>
+        </div>
+    </div>
+</div>
+
+</div>
+
+</div>
+
+
+
+
+
+     </section>
+
+    <!-- -------------------------------- Add money Form -------------------------------------- -->
+
+    <section id="add-money" class=" w-full max-w-4xl mx-auto py-10 hidden">
+
+        <div class="w-full bg-base-100  rounded-3xl p-8">
+            <h2 class="text-2xl font-semibold mb-6">Add Money</h2>
+            <form class="flex flex-col gap-4">
+                <label class="label text-[1rem] font-bold mb-2">Bank Account Number</label>
+                <select class="select appearance-none w-full rounded-[32px] ">
+                    <option disabled selected>Select bank</option>
+                    <option>IBBL</option>
+                    <option>IFIC</option>
+                    <option>BRAC Bank</option>
+                </select>
+
+                <div>
+                    <label class="label text-[1rem] font-bold mb-2">Bank Account Number</label>
+                    <input id="bank-acc-num" type="text " class="input input-bordered w-full rounded-[32px] py-[24px]"
+                        placeholder="Enter 11 digit account number" />
+                </div>
+                <div>
+                    <label class="label text-[1rem] font-bold mb-2">Amount to Add</label>
+                    <input id="amount-add" type="text" class="input input-bordered w-full rounded-[32px] py-[24px]"
+                        placeholder="Add Amount to withdraw" />
+                </div>
+                <div>
+                    <label class="label text-[1rem] font-bold mb-2">pin Number</label>
+                    <input id="add-money-pin" type="password" class="input input-bordered w-full rounded-[32px] py-[24px]"
+                        placeholder="Enter 4 digit pin number" />
+                </div>
+
+                <button id="add-money-btn" type="submit" class="btn btn-neutral mt-4 w-full rounded-[32px] py-[24px]">Add
+                    Money</button>
+            </form>
+        </div>
+    </section>
+    <!-- -------------------------------- Cash Out Form -------------------------------------- -->
+
+    <section id="cashout" class=" w-full max-w-4xl mx-auto py-10 hidden">
+
+        <div class="w-full bg-base-100  rounded-3xl p-8">
+            <h2 class="text-2xl font-semibold mb-6">Cash Out</h2>
+            <form class="flex flex-col gap-4">
+                <div>
+                    <label class="label text-[1rem] font-bold mb-2">Agent Number</label>
+                    <input id="Agent-mobile" type="text " class="input input-bordered w-full rounded-[32px] py-[24px]"
+                        placeholder="Enter 11 digit Number" />
+                </div>
+                <div>
+                    <label class="label text-[1rem] font-bold mb-2">Amount</label>
+                    <input id="cash-out-amount" type="text" class="input input-bordered w-full rounded-[32px] py-[24px]"
+                        placeholder="Enter amount to withdraw" />
+                </div>
+                <div>
+                    <label class="label text-[1rem] font-bold mb-2">pin Number</label>
+                    <input id="cash-out-pin" type="text" class="input input-bordered w-full rounded-[32px] py-[24px]"
+                        placeholder="Enter 4 digit pin number" />
+                </div>
+
+                <button id="withdraw-btn" type="submit"
+                    class="btn btn-neutral mt-4 w-full rounded-[32px] py-[24px]">Withdraw Money</button>
+            </form>
+        </div>
+    </section>
+
+    <script src="./javaScript/common.js"></script>
+    <script src="./javaScript/addMoney.js"></script>
+    <script src="./javaScript/cashout.js"></script>
+    <script src="./javaScript/home.js"></script>
+
+
 </body>
+
 </html>

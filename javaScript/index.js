@@ -14,7 +14,7 @@ document.getElementById("login-btn").addEventListener('click', function (e) {
     }
 
 
-    if (numberValue == '01756470303' && pinValue == '1234') {
+    if (numberValue === '01756470303' && pinValue === '1234') {
         alert("login succesful");
         window.location.assign('./home.html');
     }

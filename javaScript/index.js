@@ -23,8 +23,10 @@ document.getElementById("login-btn").addEventListener('click', function (e) {
         alert("Login failed");
 
     }
+})
 
+document.getElementById('forget-pin').addEventListener('click', function (e) {
+    e.preventDefault();
 
-
-
+    window.location.href = "forget.html";
 })

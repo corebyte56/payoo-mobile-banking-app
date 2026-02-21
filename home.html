@@ -69,9 +69,9 @@
                 <img src="assets/opt-2.png" alt="">
                 <p>Cashout</p>
             </button>
-            <button class="btn btn-outline flex-col h-full py-6">
+            <button onclick="showOnly('transfer-money')" class="btn btn-outline flex-col h-full py-6">
                 <img src="assets/opt-3.png" alt="">
-                <p>Send Money</p>
+                <p>Transfer Money</p>
             </button>
             <button class="btn btn-outline flex-col h-full py-6">
                 <img src="assets/opt-4.png" alt="">
@@ -81,7 +81,7 @@
                 <img src="assets/opt-5.png" alt="">
                 <p>Pay Bill</p>
             </button>
-            <button class="btn btn-outline flex-col h-full py-4">
+            <button onclick="showOnly('transaction')" class="btn btn-outline flex-col h-full py-4">
                 <img src="assets/opt-6.png" alt="">
                 <p>Transactions</p>
             </button>
@@ -90,7 +90,7 @@
     </section>
 
     <!-- -----------------------------Latest Payment ----------------------------------------- -->
-    <section class="w-full max-w-4xl mx-auto px-4 sm:px-6 md:px-8 space-y-5 pt-5">
+    <section id="transaction" class="w-full max-w-4xl mx-auto px-4 sm:px-6 md:px-8 space-y-5 pt-5   ">
         <div class="payment-text flex flex-col sm:flex-row justify-between items-start sm:items-center rounded-3xl p-4 sm:p-8">
             <h2 class="text-lg sm:text-[18px] font-bold">Latest Payment</h2>
             <a class="text-[#777777] text-sm sm:text-[1rem]" href="#">View All</a>
@@ -222,10 +222,40 @@
         </div>
     </section>
 
+    <!-- -------------------------------- TRansfer Money Form -------------------------------------- -->
+
+    <section id="transfer-money" class=" w-full max-w-4xl mx-auto py-10 px-4 sm:px-6 md:px-8 hidden">
+
+        <div class="w-full bg-base-100  rounded-3xl p-6 sm:p-8">
+            <h2 class="text-2xl font-semibold mb-6">Transfer Money</h2>
+            <form class="flex flex-col gap-4">
+                <div>
+                    <label class="label text-[1rem] font-bold mb-2">User Account Number</label>
+                    <input id="user-mobile" type="text " class="input input-bordered w-full rounded-[32px] py-[24px]"
+                        placeholder="Enter 11 digit Number" />
+                </div>
+                <div>
+                    <label class="label text-[1rem] font-bold mb-2">Amount</label>
+                    <input id="transfer-amount" type="text" class="input input-bordered w-full rounded-[32px] py-[24px]"
+                        placeholder="Enter amount to transfer" />
+                </div>
+                <div>
+                    <label class="label text-[1rem] font-bold mb-2">pin Number</label>
+                    <input id="transfer-pin" type="password" class="input input-bordered w-full rounded-[32px] py-[24px]"
+                        placeholder="Enter 4 digit pin number" />
+                </div>
+
+                <button id="transfer-btn" type="submit"
+                    class="btn btn-neutral mt-4 w-full rounded-[32px] py-[24px]">Transfer Now</button>
+            </form>
+        </div>
+    </section>
+
     <script src="./javaScript/common.js"></script>
     <script src="./javaScript/addMoney.js"></script>
     <script src="./javaScript/cashout.js"></script>
     <script src="./javaScript/home.js"></script>
+    <script src="./javaScript/transfer.js"></script>
 
 </body>
 
